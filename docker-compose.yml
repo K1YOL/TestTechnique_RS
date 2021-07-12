@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  front_end_redspher:
+    build: ./front_redSpher
+    container_name: front_end_redspher
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_BACK_URL=http://localhost:3001/
+    links:
+        - back_end_redspher:back
+    networks:
+        - redspher-network
+
+  back_end_redspher:
+    build: ./back_redSpher
+    container_name: back_end_redspher
+    environment:
+      - PORT=3001
+    ports:
+      - 3001:3001
+    networks:
+      - redspher-network
+
+networks:
+    redspher-network:

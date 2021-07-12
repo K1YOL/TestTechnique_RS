@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Pour calculer une expression mathématique rendez-vous sur la méthode POST prévue à cet effet : /math/calculer
+  p Pour utiliser cette méthode, un Body JSON est nécessaire, avec votre expression dans le paramètre "calcul"
+  p Exemple en image à l'aide de Postman:
+    br 
+    img(src='images/exemple.png')
+  
+

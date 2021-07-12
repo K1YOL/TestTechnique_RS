@@ -1,0 +1,19 @@
+FROM node:latest
+
+# Création du directory app
+WORKDIR /usr/src/app
+
+# On copie le package.json dans le dossier de destination
+COPY package*.json ./
+
+# On installe les dépendances trouvées dans le fichier package.json
+RUN npm install
+
+# On copie le reste de l'application
+COPY . .
+
+# On "EXPOSE" le port 3001 => On ouvre le port 3001 sur la machine
+EXPOSE 3001
+
+# On lance simplement la commande node app.js
+CMD [ "node", "app.js" ]
