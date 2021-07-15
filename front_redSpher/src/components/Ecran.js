@@ -54,11 +54,9 @@ class Ecran extends React.Component {
           useGrouping: true,
           maximumFractionDigits: 6
         })
-        
-
         return (
         <div {...props} className={this.props.classes.calculatorDisplay}>
-          <div className={this.props.classes.historyCalc}>{this.props.history}</div>
+          <div className={this.props.classes.historyCalc}>{props.history}</div>
           <div className={this.props.classes.text}><bdi>{formattedValue}</bdi></div>
         </div>
       )
@@ -70,10 +68,7 @@ Ecran.propTypes = {
 };
 
 
-const mapStateToProps = (state) => ({ history: state.historyCalcul });
+
 
   
-export default connect(
-    mapStateToProps,
-    null
-  )(withStyles(styles)(Ecran));
+export default (withStyles(styles)(Ecran));

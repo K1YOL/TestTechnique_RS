@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React from 'react'
 import {makeStyles} from '@material-ui/core/styles'
 import { AppBar, IconButton, Toolbar } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
@@ -29,12 +29,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+//Petit Header simple
 export default function Header() {
     const classes = useStyles();
-    const [collapsed, setCollapsed] = useState(false)
-    useEffect(() => {
-        setCollapsed(true)
-    })
+
     return (
         <div className={classes.root} id='header'>
             <AppBar className={classes.appbar} elevation={0}>

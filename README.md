@@ -6,8 +6,8 @@
     Si vous avez docker il suffit de lancer la commande "docker-compose up" à la racine du dossier.
     Sinon vous pouvez également lancer chaque partie séparément sans docker
     
-        Pour le Back-End => "node app.js" à la racine du dossier back_redspher
+        Pour le Back-End => A la racine du dossier back_redspher : "npm install" Pour installer les dépendances puis "node app.js"
             Le serveur sera disponible sur le port 3001
-        Pour le Front-End => "npm start" à la racine du dossier front_redspher
+        Pour le Front-End => A la racine du dossier front_redspher : "npm install" Pour installer les dépendances puis "npm start" 
             L'interface sera disponible sur le port 3000
     

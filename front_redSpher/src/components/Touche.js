@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import { connect } from "react-redux";
-
+import appelApi from '../actions/action';
 import { updateDisplay,clearDisplay,apiReturn } from "../store/actions/actions";
 
 class Touche extends React.Component {
@@ -15,15 +15,7 @@ class Touche extends React.Component {
         if (this.props.value === "AC") {
           this.props.clear();
         } else if(this.props.value === "="){
-          const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ calcul: this.props.display })
-          };
-          fetch((process.env.REACT_APP_BACK_URL || "http://localhost:3001/") + 'math/calculer', requestOptions)
-              .then(response => response.json())
-              .then(data => this.props.apiReturn(data.resultat,data.error || ""));
-
+          appelApi(this.props.display).then(res => this.props.apiReturn(res.resultat,res.error))
         } else {
           this.props.updateDisplay(this.props.value,this.props.type || 'num');
         }

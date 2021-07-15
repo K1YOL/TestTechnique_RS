@@ -26,17 +26,20 @@ const initialState = {
             var boolSliceNeeded = false
 
             // Si l'input est un opérateur alors...
-            if (updateDisplay.operation == "operator"){
+            if (updateDisplay.operation === "operator"){
               // On vérifie que le dernier update de l'affichage n'était pas déjà un opérateur
               //On ajoute un espace avant et après l'input
+              if(updateDisplay.input === "/")
+              updateDisplay.input = "÷"
+
               updateDisplay.input = " " + updateDisplay.input + " "
-              if (state.lastInputOperation == "operator"){
+              if (state.lastInputOperation === "operator"){
                 boolSliceNeeded = true
               }
             }
             return {
               ...state,
-              display: state.display == '0' ? updateDisplay.input
+              display: state.display === '0' ? updateDisplay.input
             : (boolSliceNeeded? state.display.slice(0,-3) : state.display) + updateDisplay.input,
               historyCalcul: "Ans = "+ state.historyResult,
               lastInputOperation: updateDisplay.operation
@@ -49,7 +52,7 @@ const initialState = {
         */
         case RESULT:{
           const apiReturn = action.payload
-          if (apiReturn.error != "" && apiReturn.error != undefined){
+          if (apiReturn.error !== "" && apiReturn.error !== undefined){
           }else{
             return {
               ...state,
@@ -59,7 +62,6 @@ const initialState = {
             }
           }
         }
-
         //Quand on appuie sur "AC" pour nettoyer l'opération en cours
         case CLEAR: {
             return initialState

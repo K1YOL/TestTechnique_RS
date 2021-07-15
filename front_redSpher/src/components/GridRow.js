@@ -21,10 +21,8 @@ const styles = theme => ({
 
 class GridRow extends React.Component {
     
-    constructor(props) {
-        super(props);
-      }
-      
+    
+      //Grille qui permet d'alligner les touches de la calculatrice
     render(){
         const { classes } = this.props;
         return (

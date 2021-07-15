@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { CssBaseline, makeStyles } from '@material-ui/core';
 import Header from './components/Header';
 import Calculatrice from './components/Calculatrice';
-import { findByLabelText } from '@testing-library/dom';
 
+//Style du root de l'application
 const useStyles = makeStyles((theme) => ({
   root:{
     minHeight:'100vh',
@@ -17,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+//Méthode principal de l'application qui va afficher le Header et la calcualtrice
 function App() {
   const classes = useStyles();
   return <div className={classes.root}>
