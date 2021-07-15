@@ -11,6 +11,7 @@ class Touche extends React.Component {
         this.handleClicks = this.handleClicks.bind(this);
       }
 
+      //Event qui permet de gérer le click sur une touche
       handleClicks(e) {
         if (this.props.value === "AC") {
           this.props.clear();

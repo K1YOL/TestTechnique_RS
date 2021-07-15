@@ -45,6 +45,7 @@ class Calculatrice extends React.Component {
       document.removeEventListener("keydown", this._handleKeyDown);
     }
 
+    //On affiche l'écran et la grille qui comporte les touches
     render(){
         const { classes } = this.props;
         return (

@@ -3,7 +3,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles'
-import { connect } from "react-redux";
 
 const styles = theme => ({
       calculatorDisplay:{
@@ -45,6 +44,8 @@ const styles = theme => ({
     },
 });
 
+
+//Component qui représente juste l'affichage du calcul et du résultat
 class Ecran extends React.Component {
       
     render(){

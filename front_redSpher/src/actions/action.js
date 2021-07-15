@@ -1,3 +1,4 @@
+//Méthode qui se charge de faire l'appel à L'API Back avec le calcul
 export default async function appelApi(display) {
     const splittedDisplay = display.split(" ").pop().trim();
     if(splittedDisplay !== "" && !isNaN(splittedDisplay) && !isNaN(parseFloat(splittedDisplay))){
