@@ -8,7 +8,7 @@ import { findByLabelText } from '@testing-library/dom';
 const useStyles = makeStyles((theme) => ({
   root:{
     minHeight:'100vh',
-    background: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+    backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% )",
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     display: 'flex',
